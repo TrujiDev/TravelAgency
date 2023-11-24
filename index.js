@@ -5,7 +5,7 @@ const app = express();
 
 app.use('/', router);
 
-app.set('view engine', 'pug');
+
 
 const port = process.env.PORT || 5000;
 
