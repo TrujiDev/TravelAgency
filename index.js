@@ -4,6 +4,7 @@ import router from './routes/index.js';
 const app = express();
 
 app.use('/', router);
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 
