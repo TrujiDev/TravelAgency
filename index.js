@@ -3,10 +3,16 @@ import router from './routes/index.js';
 
 const app = express();
 
+app.set('view engine', 'pug');
+
+app.use((req, res, next) => {
+	const year = new Date();
+	res.locals.currentYear = year.getFullYear();
+	next();
+});
+
 app.use('/', router);
 app.use(express.static('public'));
-
-app.set('view engine', 'pug');
 
 const port = process.env.PORT || 5000;
 
