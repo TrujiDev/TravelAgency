@@ -3,11 +3,15 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	res.send('Home page');
+	res.render('home');
 });
 
 router.get('/aboutUs', (req, res) => {
-    res.render('aboutUs');
+	const travel = 'Travel to London';
+
+	res.render('aboutUs', {
+		travel,
+	});
 });
 
 export default router;
