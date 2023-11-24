@@ -6,12 +6,8 @@ router.get('/', (req, res) => {
 	res.send('Home page');
 });
 
-router.get('/about', (req, res) => {
-    res.send('About page');
-});
-
-router.get('/contact', (req, res) => {
-    res.send('Contact page');
+router.get('/aboutUs', (req, res) => {
+    res.render('aboutUs');
 });
 
 export default router;
