@@ -6,6 +6,7 @@ const app = express();
 app.use((req, res, next) => {
 	const year = new Date();
 	res.locals.currentYear = year.getFullYear();
+	res.locals.siteName = 'Agencia de Viajes';
 	next();
 });
 
