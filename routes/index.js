@@ -3,14 +3,26 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	res.render('home');
+	res.render('inicio', {
+		page: 'Inicio',
+	});
 });
 
-router.get('/aboutUs', (req, res) => {
-	const travel = 'Travel to London';
+router.get('/nosotros', (req, res) => {
+	res.render('nosotros', {
+		page: 'Nosotros',
+	});
+});
 
-	res.render('aboutUs', {
-		travel,
+router.get('/viajes', (req, res) => {
+	res.render('viajes', {
+		page: 'Viajes',
+	});
+});
+
+router.get('/testimoniales', (req, res) => {
+	res.render('testimoniales', {
+		page: 'Testimoniales',
 	});
 });
 
