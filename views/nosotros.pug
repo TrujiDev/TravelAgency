@@ -3,4 +3,30 @@ extends ./layout/index
 block content
     main.container.mt-5
         .row
-            h1 #{page}
+            .col-md-5
+                img(src="img/about_us.jpg", alt="image of the eiffel tower", class="img-fluid")
+            .col-md-7
+                h1 #{page}
+                blockquote Vestibulum dapibus iaculis ultrices. Donec dapibus lectus ex, finibus lobortis lacus pharetra vel. Suspendisse velit arcu, fringilla ut rutrum et, semper a augue. Nulla ullamcorper risus a ante porta lacinia. Donec ornare ante eu tristique scelerisque. Cras dignissim dolor at odio aliquet porttitor.
+
+                p Nulla ac interdum nisi. Curabitur nunc libero, sodales ac bibendum id, iaculis vel ipsum. Praesent euismod blandit purus, vel posuere velit dictum non. Etiam bibendum, lacus nec suscipit sagittis, nunc ipsum aliquam quam, eget cursus enim magna ac ipsum. Quisque scelerisque tortor ut nisl semper, sit amet posuere ligula maximus.
+
+                p Mauris ut mattis eros. Suspendisse fringilla gravida orci, at gravida nisi tempus non. Vestibulum vel imperdiet risus. Sed at urna mollis tellus iaculis pretium. Vestibulum finibus lectus at accumsan semper. Nulla facilisi. Donec congue orci at imperdiet semper. Sed eu libero quam. In ullamcorper euismod maximus. Morbi sollicitudin orci eget nibh venenatis congue. Suspendisse porta scelerisque pretium.
+
+    .list-icons
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="/img/security_icon.svg", alt="icono sobre seguridad", class="img-fluid mb-4")
+                    h2 La mejor seguridad
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+
+                .col-md-4
+                    img(src="/img/destinations_icon.svg", alt="icono sobre destinos", class="img-fluid mb-4")
+                    h2 Los mejores destinos
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+
+                .col-md-4
+                    img(src="/img/prices_icon.svg", alt="icono sobre precios", class="img-fluid mb-4")
+                    h2 Excelentes precios
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
