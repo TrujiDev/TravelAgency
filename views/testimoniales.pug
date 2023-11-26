@@ -5,19 +5,24 @@ block content
         h1.mt-5.text-center #{page}
         .row
 
-            h2.d-block.w-100.text-center Agrega un testimonio
+            .col-md-12
+                h2.d-block.w-100.text-center Agrega un testimonio
+
+                if(errors)
+                    each error in errors
+                        .alert.col.alert-danger.text-center #{error.message}
 
             .row.justify-content-center.col
                 .col-md-8
-                    form(action="" method='POST')
+                    form(action="/testimoniales" method='POST')
                         .form-group
-                            label(for='nombre') Nombre
-                            input#nombre.form-control(type='text' placeholder='Tu Nombre' name='nombre' required)
+                            label(for='name') Nombre
+                            input#name.form-control(type='text' placeholder='Tu Nombre' name='name' value= name)
                         .form-group
-                            label(for='correo') Correo
-                            input#correo.form-control(type='email' placeholder='Tu Correo' name='correo' required)
+                            label(for='email') Correo
+                            input#email.form-control(type='email' placeholder='Tu Correo' name='email', value= email)
                         .form-group
-                            label(for='mensaje') Mensaje
-                            textarea#mensaje.form-control(name='mensaje' placeholder='Tu Mensaje' rows=3 required)
+                            label(for='message') Mensaje
+                            textarea#message.form-control(name='message' placeholder='Escribe aqui tu testimonio' rows=3) #{message}
 
                         input.btn.btn-success.btn-block(type='submit' value='Enviar')
