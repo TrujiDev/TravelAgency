@@ -1,6 +1,5 @@
 :root {
 	font-family: 'Staatliches', cursive;
-	font-family: 'Covered By Your Grace', cursive;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -57,7 +56,7 @@ h3 {
 }
 
 .slider em {
-	font-family: 'Covered By Your Grace', cursive;
+	font-family: 'Staatliches', cursive;
 	font-size: 4rem;
 	order: -1;
 	line-height: 0.8;
