@@ -1,3 +1,5 @@
+import { Travel } from "../models/Travel.js";
+
 const homePage = (req, res) => {
 	res.render('inicio', {
 		page: 'Inicio',
@@ -10,9 +12,12 @@ const aboutPage = (req, res) => {
 	});
 };
 
-const tripsPage = (req, res) => {
+const tripsPage = async (req, res) => {
+	const travels = await Travel.findAll();
+
 	res.render('viajes', {
-		page: 'Viajes',
+		page: 'Próximos Viajes',
+		travels,
 	});
 };
 
