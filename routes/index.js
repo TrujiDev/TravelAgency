@@ -1,4 +1,5 @@
 import express from 'express';
+import { saveTestimonial } from '../controllers/testimonialController.js';
 import {
 	homePage,
 	aboutPage,
@@ -18,5 +19,6 @@ router.get('/viajes', tripsPage);
 router.get('/viajes/:viaje', detailsPage);
 
 router.get('/testimoniales', testimonialsPage);
+router.post('/testimoniales', saveTestimonial);
 
 export default router;
