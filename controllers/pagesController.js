@@ -1,4 +1,4 @@
-import { Travel } from "../models/Travel.js";
+import { Travel } from '../models/Travel.js';
 
 const homePage = (req, res) => {
 	res.render('inicio', {
@@ -21,10 +21,25 @@ const tripsPage = async (req, res) => {
 	});
 };
 
+const detailsPage = async (req, res) => {
+	const { viaje } = req.params;
+
+	try {
+		const travel = await Travel.findOne({ where: { slug: viaje } });
+
+		res.render('viaje', {
+			page: 'Información Viaje',
+			travel,
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 const testimonialsPage = (req, res) => {
 	res.render('testimoniales', {
 		page: 'Testimoniales',
 	});
 };
 
-export { homePage, aboutPage, tripsPage, testimonialsPage };
+export { homePage, aboutPage, tripsPage, detailsPage, testimonialsPage };
