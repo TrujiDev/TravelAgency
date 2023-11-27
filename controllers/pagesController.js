@@ -3,12 +3,16 @@ import { Testimonial } from '../models/Testimonial.js';
 
 const homePage = async (req, res) => {
 	try {
-		const travels = await Travel.findAll({ limit: 3 });
+		const result = await Promise.all([
+			Travel.findAll({ limit: 3 }),
+			Testimonial.findAll({ limit: 3 })
+		]);
 
 		res.render('inicio', {
 			page: 'Inicio',
 			clase: 'home',
-			travels,
+			travels: result[0],
+			testimonials : result[1],
 		});	
 	} catch (error) {
 		console.log(error);
