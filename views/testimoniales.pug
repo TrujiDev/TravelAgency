@@ -3,8 +3,20 @@ extends ./layout/index
 block content
     main.container.mt-5
         h1.mt-5.text-center #{page}
-        .row
 
+        blockquote.text-center Lee los testimonios de nuestros clientes
+        .row.testimonials
+            each testimonial in testimonials
+                .col-md-6.col-lg-4.mb-4
+                    .card
+                        .card-body
+                            blockquote.blockquote
+                            p.mb-0
+                                | #{testimonial.message}
+                            footer.blockquote-footer
+                                | #{testimonial.name}
+
+        .row
             .col-md-12
                 h2.d-block.w-100.text-center Agrega un testimonio
 
