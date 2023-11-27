@@ -17,28 +17,28 @@ export const saveTestimonial = async (req, res) => {
 		errors.push({ message: 'El testimonio esta vacio' });
 	}
 
-    if (errors.length > 0) {
-        const testimonials = await Testimonial.findAll();
+	if (errors.length > 0) {
+		const testimonials = await Testimonial.findAll();
 
-        res.render('testimoniales', {
-            page: 'Testimoniales',
-            errors,
-            name,
-            email,
-            message,
-            testimonials,
-        });
+		res.render('testimoniales', {
+			page: 'Testimoniales',
+			errors,
+			name,
+			email,
+			message,
+			testimonials,
+		});
 	} else {
-	    try {
-	        await Testimonial.create({
-	            name,
-	            email,
-	            message,
-	        });
+		try {
+			await Testimonial.create({
+				name,
+				email,
+				message,
+			});
 
-	        res.redirect('/testimoniales');
-	    } catch (error) {
-	        console.log(error);
-	    }
+			res.redirect('/testimoniales');
+		} catch (error) {
+			console.log(error);
+		}
 	}
 };

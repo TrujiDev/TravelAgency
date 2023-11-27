@@ -5,15 +5,15 @@ const homePage = async (req, res) => {
 	try {
 		const result = await Promise.all([
 			Travel.findAll({ limit: 3 }),
-			Testimonial.findAll({ limit: 3 })
+			Testimonial.findAll({ limit: 3 }),
 		]);
 
 		res.render('inicio', {
 			page: 'Inicio',
 			clase: 'home',
 			travels: result[0],
-			testimonials : result[1],
-		});	
+			testimonials: result[1],
+		});
 	} catch (error) {
 		console.log(error);
 	}
@@ -57,9 +57,7 @@ const testimonialsPage = async (req, res) => {
 			page: 'Testimoniales',
 			testimonials,
 		});
-	} catch (error) {
-		
-	}
+	} catch (error) {}
 };
 
 export { homePage, aboutPage, tripsPage, detailsPage, testimonialsPage };
