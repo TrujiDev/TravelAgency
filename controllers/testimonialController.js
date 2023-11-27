@@ -1,4 +1,3 @@
-// import { Travel } from '../models/Travel.js';
 import { Testimonial } from '../models/Testimonial.js';
 
 export const saveTestimonial = async (req, res) => {
@@ -19,7 +18,7 @@ export const saveTestimonial = async (req, res) => {
 	}
 
     if (errors.length > 0) {
-        // const travels = await Travel.findAll();
+        const testimonials = await Testimonial.findAll();
 
         res.render('testimoniales', {
             page: 'Testimoniales',
@@ -27,7 +26,7 @@ export const saveTestimonial = async (req, res) => {
             name,
             email,
             message,
-            // travels,
+            testimonials,
         });
 	} else {
 	    try {
