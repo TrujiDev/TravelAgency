@@ -1,4 +1,4 @@
-```markdown
+```
 # Travel Agency
 
 ## Technologies Used
