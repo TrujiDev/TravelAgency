@@ -1,4 +1,5 @@
 import { Travel } from '../models/Travel.js';
+import { Testimonial } from '../models/Testimonial.js';
 
 const homePage = (req, res) => {
 	res.render('inicio', {
@@ -36,10 +37,17 @@ const detailsPage = async (req, res) => {
 	}
 };
 
-const testimonialsPage = (req, res) => {
-	res.render('testimoniales', {
-		page: 'Testimoniales',
-	});
+const testimonialsPage = async (req, res) => {
+	try {
+		const testimonials = await Testimonial.findAll();
+
+		res.render('testimoniales', {
+			page: 'Testimoniales',
+			testimonials,
+		});
+	} catch (error) {
+		
+	}
 };
 
 export { homePage, aboutPage, tripsPage, detailsPage, testimonialsPage };
