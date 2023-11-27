@@ -1,6 +1,16 @@
 extends ./layout/index
 
+block slider
+    .slider
+        h1 Rio de Janeiro
+        em Aventura
+
 block content
     main.container.mt-5
-        .row
-            h1 #{page}
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                p Sed eget lacus eu erat tristique ultricies id eget est. Proin vitae metus luctus, tempor dolor et, egestas est. Curabitur risus lectus, ultrices at ante non, pulvinar aliquet ante. Quisque rutrum elementum lorem, vitae facilisis enim auctor at.
+                p Mauris in nunc maximus, porta eros in, lobortis libero. Cras accumsan turpis eget ipsum sollicitudin, vel hendrerit nisi consequat. Pellentesque nec rhoncus ante. Mauris sed nibh nibh. Vestibulum ac iaculis arcu, vitae commodo dolor.
+            .col-md-6
+                img(src="/img/home_about_us.jpg", alt="Imagen de la empresa", class="img-fluid")
